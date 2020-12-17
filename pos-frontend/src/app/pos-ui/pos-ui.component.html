@@ -1,0 +1,87 @@
+<body>
+<h1>{{title}}</h1>
+<div class="pos-container">
+  <mat-grid-list cols="15" rowHeight="500px">
+    <mat-grid-tile colspan="7" rowspan="1">
+      <section>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="pos-new-transaction-button" name="newTransaction"
+                  (click)="newTransaction()" [disabled]="isNewTransactionDisabled">New Transaction
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="pos-void-button" (click)="clearItemList()"
+                  [disabled]="isDisabled">Void
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="pos-checkout-button"
+                  (click)="checkoutItems()" [disabled]="isDisabled">Checkout
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="pos-payment-button"
+                  (click)="showPaymentDialog()" [disabled]="isPaymentDisabled">Customer Payment
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="item1" name="item1"
+                  (click)="addItemToItemList('Item1 - 1.00')" [disabled]="isDisabled">Item 1
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item2" name="item2"
+                  (click)="addItemToItemList('Item2 - 2.00')" [disabled]="isDisabled">Item 2
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item3" name="item3"
+                  (click)="addItemToItemList('Item3 - 3.00')" [disabled]="isDisabled">Item 3
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="item4" name="item4"
+                  (click)="addItemToItemList('Item4 - 4.00')" [disabled]="isDisabled">Item 4
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item5" name="item5"
+                  (click)="addItemToItemList('Item5 - 5.00')" [disabled]="isDisabled">Item 5
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item6" name="item6"
+                  (click)="addItemToItemList('Item6 - 6.00')" [disabled]="isDisabled">Item 6
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="item7" name="item7"
+                  (click)="addItemToItemList('Item7 - 7.00')" [disabled]="isDisabled">Item 7
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item8" name="item8"
+                  (click)="addItemToItemList('Item8 - 8.00')" [disabled]="isDisabled">Item 8
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item9" name="item9"
+                  (click)="addItemToItemList('Item9 - 9.00')" [disabled]="isDisabled">Item 9
+          </button>
+        </div>
+        <div class="pos-button-div">
+          <button class="pos-button" mat-raised-button color="primary" id="item10" name="item10"
+                  (click)="addItemToItemList('Item10 - 10.00')" [disabled]="isDisabled">Item 10
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item11" name="item11"
+                  (click)="addItemToItemList('Item11 - 11.00')" [disabled]="isDisabled">Item 11
+          </button>
+          <button class="pos-button" mat-raised-button color="primary" id="item12" name="item12"
+                  (click)="addItemToItemList('Item12 - 12.00')" [disabled]="isDisabled">Item 12
+          </button>
+        </div>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="5" rowspan="1">
+      <section>
+        <div class="item-list-div" id="itemList" name="itemList" #itemList></div>
+        <div>
+          <div class="sub-total-text" id="subTotal">Sub-Total:{{subTotalPrice.toFixed(2)}}</div>
+          <div class="tax-text" id="tax">Tax:{{tax.toFixed(2)}}</div>
+          <div class="total-cost-text" id="totalCost">Total:{{totalPrice.toFixed(2)}}</div>
+        </div>
+      </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</body>

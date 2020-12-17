@@ -1,0 +1,119 @@
+.pos-container {
+  position: relative;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.pos-button {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: bisque;
+  color: #125699;
+  margin: 10px;
+  left: -25px;
+}
+
+.pos-button-div {
+  width: 100%;
+  position: relative;
+  left: 30%;
+}
+
+#pos-void-button {
+  background-color: lightyellow;
+  color: red;
+  width: 100%;
+  left:10%
+}
+
+#pos-checkout-button {
+  background-color: aqua;
+  color: rebeccapurple;
+  width: 100%;
+  left:10%
+}
+
+#pos-new-transaction-button{
+  background-color: #25ff64;
+  color: #7c0984;
+  width: 100%;
+  left:10%
+}
+
+#pos-payment-button{
+  background-color: #2ad8ff;
+  color: #24292e;
+  width: 100%;
+  left:10%
+}
+
+#pos-void-button[disabled],
+#pos-checkout-button[disabled],
+#pos-new-transaction-button[disabled],
+#pos-payment-button[disabled],
+button[id^="item"][disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.item-list-div {
+  background-color: azure;
+  display: inline-block;
+  position: relative;
+  width: 500px;
+  height: 340px;
+  resize: none;
+  top:3.5px;
+  margin-bottom: 12px;
+  overflow-y: auto;
+}
+
+.item-info-div {
+  background-color: cornsilk;
+  color: indigo;
+  display: inline-block;
+  position: relative;
+  width: inherit;
+  margin: 0.5px;
+}
+
+.sub-total-text {
+  background-color: azure;
+  width: 500px;
+  resize: none;
+  color: darkblue;
+  font-size: 15px;
+  top: 30px;
+  height: 25px;
+  margin-bottom: 2px;
+  margin-top: 2%;
+}
+
+.tax-text {
+  background-color: azure;
+  width: 500px;
+  resize: none;
+  color: black;
+  font-size: 15px;
+  top: 40px;
+  height: 25px;
+  margin-bottom: 2px;
+}
+
+.total-cost-text {
+  background-color: aquamarine;
+  width: 500px;
+  resize: none;
+  color: black;
+  font-size: 25px;
+  top: 40px;
+  height: 40px;
+  //margin: 2px;
+}
+body {
+  background-color: #125699;
+}
+
