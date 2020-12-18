@@ -1,8 +1,9 @@
 <body>
 <h1>{{title}}</h1>
 <div class="pos-container">
-  <mat-grid-list cols="15" rowHeight="500px">
-    <mat-grid-tile colspan="7" rowspan="1">
+<!--  <mat-grid-list cols="6" rowHeight="500px">-->
+  <mat-grid-list cols="6" rowHeight="500px">
+    <mat-grid-tile class="pos-action-grid" colspan="1">
       <section>
         <div class="pos-button-div">
           <button class="pos-button" mat-raised-button color="primary" id="pos-new-transaction-button" name="newTransaction"
@@ -25,7 +26,9 @@
           </button>
         </div>
       </section>
-      <section>
+    </mat-grid-tile>
+    <mat-grid-tile class="pos-items-grid" colspan="2">
+      <section class="pos-items-section">
         <div class="pos-button-div">
           <button class="pos-button" mat-raised-button color="primary" id="item1" name="item1"
                   (click)="addItemToItemList('Item1 - 1.00')" [disabled]="isDisabled">Item 1
@@ -72,7 +75,7 @@
         </div>
       </section>
     </mat-grid-tile>
-    <mat-grid-tile colspan="5" rowspan="1">
+    <mat-grid-tile class="pos-info-grid" colspan="2">
       <section>
         <div class="item-list-div" id="itemList" name="itemList" #itemList></div>
         <div>

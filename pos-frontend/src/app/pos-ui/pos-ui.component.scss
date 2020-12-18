@@ -1,7 +1,7 @@
 .pos-container {
   position: relative;
   top: 40%;
-  left: 55%;
+  left: 57%;
   transform: translate(-50%, -50%);
 }
 
@@ -25,38 +25,64 @@
   background-color: lightyellow;
   color: red;
   width: 100%;
-  left:10%
+  left: -25%
 }
 
 #pos-checkout-button {
   background-color: aqua;
   color: rebeccapurple;
   width: 100%;
-  left:10%
+  left: -25%
 }
 
-#pos-new-transaction-button{
+#pos-new-transaction-button {
   background-color: #25ff64;
   color: #7c0984;
   width: 100%;
-  left:10%
+  left: -25%
 }
 
-#pos-payment-button{
+#pos-payment-button {
   background-color: #2ad8ff;
   color: #24292e;
   width: 100%;
-  left:10%
+  left: -25%
+}
+
+button[id^="item"] {
+  left: -25%
 }
 
 #pos-void-button[disabled],
 #pos-checkout-button[disabled],
 #pos-new-transaction-button[disabled],
 #pos-payment-button[disabled],
-button[id^="item"][disabled]{
+button[id^="item"][disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+.pos-action-grid {
+  left: 100px !important;
+  //background-color: red
+}
+
+.pos-items-grid {
+  //overflow-y: scroll;
+  //background-color: yellow;
+  width: 25% !important;
+  left: 350px !important;
+}
+
+//.pos-items-section {
+//  overflow-y: scroll;
+//  //background-color: yellow;
+//}
+
+.pos-info-grid {
+  //overflow-y: scroll;
+  //background-color: blue
 }
 
 .item-list-div {
@@ -66,7 +92,7 @@ button[id^="item"][disabled]{
   width: 500px;
   height: 340px;
   resize: none;
-  top:3.5px;
+  top: 3.5px;
   margin-bottom: 12px;
   overflow-y: auto;
 }
@@ -113,6 +139,7 @@ button[id^="item"][disabled]{
   height: 40px;
   //margin: 2px;
 }
+
 body {
   background-color: #125699;
 }

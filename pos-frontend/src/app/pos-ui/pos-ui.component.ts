@@ -16,7 +16,7 @@ export class PosUiComponent {//implements OnInit {
   isNewTransactionDisabled: boolean=false;
   isPaymentDisabled: boolean=true;
 
-  private tax: number = 0.03;
+  tax: number = 0.03;
 
   @ViewChild('itemList', {static: false}) itemListElement!: ElementRef;
   private itemInfoDiv!: any;
