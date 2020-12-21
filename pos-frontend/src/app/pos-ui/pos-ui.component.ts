@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Item} from "../models/Item";
+import {MatDialog} from "@angular/material/dialog";
+import {PaymentDialogComponent} from "./payment-dialog/payment-dialog.component";
 
 @Component({
   selector: 'app-pos-ui-component',
@@ -21,7 +23,7 @@ export class PosUiComponent {//implements OnInit {
   @ViewChild('itemList', {static: false}) itemListElement!: ElementRef;
   private itemInfoDiv!: any;
 
-  constructor(private renderer: Renderer2) {
+  constructor(private renderer: Renderer2, private dialog:MatDialog) {
     console.log("Pos-UI Component")
   }
 
@@ -88,7 +90,14 @@ export class PosUiComponent {//implements OnInit {
 
   showPaymentDialog() {
     console.log("Show Payment Dialog")
-    this.isNewTransactionDisabled = false;
+    // this.isNewTransactionDisabled = false;
     this.isPaymentDisabled = true;
+    const paymentDialog = this.dialog.open(PaymentDialogComponent,{
+      width: '600px', height: '600px', data:{totalPrice: this.totalPrice}
+    });
+
+    paymentDialog.afterClosed().subscribe(value => {
+      this.isNewTransactionDisabled = false;
+    })
   }
 }

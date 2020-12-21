@@ -1,7 +1,6 @@
 <body>
 <h1>{{title}}</h1>
 <div class="pos-container">
-<!--  <mat-grid-list cols="6" rowHeight="500px">-->
   <mat-grid-list cols="6" rowHeight="500px">
     <mat-grid-tile class="pos-action-grid" colspan="1">
       <section>
@@ -81,7 +80,7 @@
         <div>
           <div class="sub-total-text" id="subTotal">Sub-Total:{{subTotalPrice.toFixed(2)}}</div>
           <div class="tax-text" id="tax">Tax:{{tax.toFixed(2)}}</div>
-          <div class="total-cost-text" id="totalCost">Total:{{totalPrice.toFixed(2)}}</div>
+          <div class="total-cost-text" id="totalCost" ngModel="totalPrice">Total:{{totalPrice.toFixed(2)}}</div>
         </div>
       </section>
     </mat-grid-tile>
