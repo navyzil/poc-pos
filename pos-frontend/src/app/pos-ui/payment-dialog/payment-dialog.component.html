@@ -4,36 +4,16 @@
     <mat-grid-tile class="total-payment-label" colspan="3">
       <mat-label>Total Cost:{{paymentDialogData.totalPrice}}</mat-label>
     </mat-grid-tile>
-    <mat-grid-tile class="total-payment-label" colspan="3">
-      <mat-label>Total Payment:{{(+this.payment).toFixed(2)}}</mat-label>
+    <mat-grid-tile class="payment-options" colspan="3">
+      <mat-radio-group [(ngModel)]="paymentType">
+<!--        <mat-radio-button *ngFor="let payment of payments" [value]="payment" (click)="displayPaymentMode(payment)">-->
+        <mat-radio-button *ngFor="let payment of payments" [value]="payment">
+          {{payment}}
+        </mat-radio-button>
+      </mat-radio-group>
     </mat-grid-tile>
-    <mat-grid-tile class="total-payment-label" colspan="3">
-      <mat-label>Change:{{paymentDialogData.change.toFixed(2)}}</mat-label>
-    </mat-grid-tile>
-    <mat-dialog-actions>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="one('1')">1</button>
-        <button mat-raised-button (click)="two('2')">2</button>
-        <button mat-raised-button (click)="three('3')">3</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="four('4')">4</button>
-        <button mat-raised-button (click)="five('5')">5</button>
-        <button mat-raised-button (click)="six('6')">6</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="seven('7')">7</button>
-        <button mat-raised-button (click)="eight('8')">8</button>
-        <button mat-raised-button (click)="nine('9')">9</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="zero('0')">0</button>
-        <button mat-raised-button (click)="decimal('.')">.</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="computeChange()">Compute</button>
-        <button mat-raised-button (click)="clear()">Clear</button>
-      </mat-grid-tile>
-    </mat-dialog-actions>
   </mat-grid-list>
+  <div id="paymentmode-div" #paymentModeDiv *ngIf="paymentType == 'Cash'; then cashBlock else cardBlock"></div>
+  <ng-template #cashBlock><cash-payment></cash-payment></ng-template>
+  <ng-template #cardBlock><card-payment></card-payment></ng-template>
 </div>
