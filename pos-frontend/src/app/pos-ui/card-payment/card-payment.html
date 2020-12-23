@@ -1,38 +1,39 @@
   <mat-grid-list cols="3" rowHeight="75px">
     <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Name:</mat-label>
-      <input matInput type="text">
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
       <mat-label>Card Number:</mat-label>
-      <input matInput type="text">
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Expiry Date:</mat-label>
-      <input matInput type="text">
+      <input matInput type="text" #cardNumberInput (focus)="focusOnCardNumber()" value="{{cardNumber}}" [maxLength]="19">
+      <button mat-raised-button (click)="clearField('CardNumber')">Clear</button>
     </mat-grid-tile>
     <mat-grid-tile class="card-number-label" colspan="3">
       <mat-label>CCV:</mat-label>
-      <input matInput type="text">
+      <input matInput type="text" #ccvInput (focus)="focusOnCCV()" value="{{cardCcv}}" [maxLength]="3">
+      <button mat-raised-button (click)="clearField('CCV')">Clear</button>
+    </mat-grid-tile>
+    <mat-grid-tile class="card-number-label" colspan="3">
+      <mat-label>Name:{{card.name}}</mat-label>
+      <mat-label>Card Number:{{card.number}}</mat-label>
+      <mat-label>Expiry:{{card.expiryDate}}</mat-label>
+      <mat-label>CCV:{{card.ccv}}</mat-label>
     </mat-grid-tile>
     <mat-dialog-actions>
       <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="one('1')">1</button>
-        <button mat-raised-button (click)="two('2')">2</button>
-        <button mat-raised-button (click)="three('3')">3</button>
+        <button mat-raised-button (click)="one()">1</button>
+        <button mat-raised-button (click)="two()">2</button>
+        <button mat-raised-button (click)="three()">3</button>
       </mat-grid-tile>
       <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="four('4')">4</button>
-        <button mat-raised-button (click)="five('5')">5</button>
-        <button mat-raised-button (click)="six('6')">6</button>
+        <button mat-raised-button (click)="four()">4</button>
+        <button mat-raised-button (click)="five()">5</button>
+        <button mat-raised-button (click)="six()">6</button>
       </mat-grid-tile>
       <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="seven('7')">7</button>
-        <button mat-raised-button (click)="eight('8')">8</button>
-        <button mat-raised-button (click)="nine('9')">9</button>
+        <button mat-raised-button (click)="seven()">7</button>
+        <button mat-raised-button (click)="eight()">8</button>
+        <button mat-raised-button (click)="nine()">9</button>
       </mat-grid-tile>
       <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="zero('0')">0</button>
+        <button mat-raised-button (click)="zero()">0</button>
+        <button mat-raised-button (click)="confirm()">Confirm</button>
       </mat-grid-tile>
     </mat-dialog-actions>
   </mat-grid-list>

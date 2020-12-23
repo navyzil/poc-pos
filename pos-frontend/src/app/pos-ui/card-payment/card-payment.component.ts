@@ -1,5 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, ElementRef, ViewChild} from "@angular/core";
 import {PosNumbers} from "../../shared/PosNumbers";
+import {Card} from "../../models/Card";
 
 @Component({
   selector: "card-payment",
@@ -8,37 +9,91 @@ import {PosNumbers} from "../../shared/PosNumbers";
 
 })
 export class CardPaymentComponent implements PosNumbers {
-  constructor() {
+  @ViewChild('cardNumberInput', {static: false}) cardNumberInput!: ElementRef;
+  @ViewChild('ccvInput', {static: false}) ccvInput!: ElementRef;
+
+  isFocusedOnCardNumberInput: boolean;
+  isFocusedOnCcvInput: boolean;
+  cardNumber: string;
+  cardCcv: string;
+
+  constructor(public card: Card) {
+    this.isFocusedOnCardNumberInput = true;
+    this.isFocusedOnCcvInput = false;
+    this.cardCcv = "";
+    this.cardNumber = "";
   }
 
-  one(number: string): void {
+  one(): void {
+    this.placeValueToInput("1");
   }
 
 
-  two(number: string): void {
+  two(): void {
+    this.placeValueToInput("2");
   }
 
-  three(number: string): void {
+  three(): void {
+    this.placeValueToInput("3");
   }
 
-  four(number: string): void {
+  four(): void {
+    this.placeValueToInput("4");
   }
 
-  five(number: string): void {
+  five(): void {
+    this.placeValueToInput("5");
   }
 
-  six(number: string): void {
+  six(): void {
+    this.placeValueToInput("6");
   }
 
-  seven(number: string): void {
+  seven(): void {
+    this.placeValueToInput("7");
   }
 
-  eight(number: string): void {
+  eight(): void {
+    this.placeValueToInput("8");
   }
 
-  nine(number: string): void {
+  nine(): void {
+    this.placeValueToInput("9");
   }
 
-  zero(number: string): void {
+  zero(): void {
+    this.placeValueToInput("0");
+  }
+
+  private placeValueToInput(numericValue: string) {
+    if (this.isFocusedOnCardNumberInput && this.cardNumber.length < 19) {
+      this.cardNumber += numericValue;
+    } else if(this.isFocusedOnCcvInput && this.cardCcv.length < 3) {
+      this.cardCcv += numericValue;
+    }
+  }
+
+  focusOnCardNumber() {
+    console.log("focused on Card Number text");
+    this.isFocusedOnCardNumberInput = true;
+    this.isFocusedOnCcvInput = false;
+  }
+
+  focusOnCCV() {
+    console.log("focused on CCV text");
+    this.isFocusedOnCardNumberInput = false;
+    this.isFocusedOnCcvInput = true;
+  }
+
+  clearField(textType: string) {
+    if (textType == 'CardNumber') {
+      this.cardNumber = "";
+    } else {
+      this.cardCcv = "";
+    }
+  }
+
+  confirm() {
+    console.log("Confirming Record of Card Number:",this.cardNumber, " with CCV:",this.cardCcv);
   }
 }

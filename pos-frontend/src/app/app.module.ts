@@ -15,6 +15,8 @@ import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {CardPaymentComponent} from "./pos-ui/card-payment/card-payment.component";
+import {Card} from "./models/Card";
+import {Item} from "./models/Item";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import {CardPaymentComponent} from "./pos-ui/card-payment/card-payment.component
     FormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [Card, Item],
   bootstrap: [
     // AppComponent,
     PosUiComponent

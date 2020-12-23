@@ -26,59 +26,59 @@ export class CashPaymentComponent implements PosNumbers{
     }
   }
 
-  one(number: string) {
+  one() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "1";
   }
 
-  two(number: string) {
+  two() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "2";
   }
 
-  three(number: string) {
+  three() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "3";
   }
 
-  four(number: string) {
+  four() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "4";
   }
 
-  five(number: string) {
+  five() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "5";
   }
 
-  six(number: string) {
+  six() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "6";
   }
 
-  seven(number: string) {
+  seven() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "7";
   }
 
-  eight(number: string) {
+  eight() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "8";
   }
 
-  nine(number: string) {
+  nine() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "9";
   }
 
-  zero(number: string) {
+  zero() {
     this.clearDefaultValue();
-    this.payment += number;
+    this.payment += "0";
   }
 
-  decimal(decimal: string) {
+  decimal() {
     this.clearDefaultValue();
-    this.payment += decimal;
+    this.payment += ".";
   }
 
   computeChange() {
