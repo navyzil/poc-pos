@@ -3,13 +3,15 @@ export class Card {
   private _ccv: string;
   private _name: string = "";
   private _expiryDate: string = "";
+  private _isActive:boolean=false;
 
 
-  constructor(number: string, ccv: string, name: string, expiryDate: string) {
+  constructor(number: string, ccv: string, name: string, expiryDate: string, isActive:boolean) {
     this._cardNumber = number;
     this._ccv = ccv;
     this._name = name;
     this._expiryDate = expiryDate;
+    this._isActive = isActive;
   }
 
   get cardNumber(): string {
@@ -42,5 +44,13 @@ export class Card {
 
   set expiryDate(expiryDate: string) {
     this._expiryDate = expiryDate;
+  }
+
+  get isActive(): boolean {
+    return this._isActive;
+  }
+
+  set isActive(value: boolean) {
+    this._isActive = value;
   }
 }

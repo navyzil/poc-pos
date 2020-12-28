@@ -8,10 +8,10 @@ export class CardInfoService {
 
   constructor() {
     this.listOfCardInfo = new Array();
-    this.listOfCardInfo.push(new Card("1234567890000001", "111", "John Smith", "12-2021"));
-    this.listOfCardInfo.push(new Card("1234567890123456789", "112", "John Doe", "01-2022"));
-    this.listOfCardInfo.push(new Card("1234567890000000001", "113", "Jane Doe", "12-2021"));
-    this.listOfCardInfo.push(new Card("1234567891234567", "114", "Jane Smith", "01-2022"));
+    this.listOfCardInfo.push(new Card("1234567890000001", "111", "John Smith", "12-2021", true));
+    this.listOfCardInfo.push(new Card("1234567890123456789", "112", "John Doe", "01-2022", false));
+    this.listOfCardInfo.push(new Card("1234567890000000001", "113", "Jane Doe", "12-2021",false));
+    this.listOfCardInfo.push(new Card("1234567891234567", "114", "Jane Smith", "01-2022", true));
   }
 
   public getCardInfo(cardNumber: string, ccv: string): Card {
@@ -28,10 +28,10 @@ export class CardInfoService {
       return undefined;
     });
     if (cardInfo == undefined) {
-      this.cardInfo = new Card("0000000000000000", "000", "User not found", "N/A")
+      this.cardInfo = new Card("0000000000000000", "000", "User not found", "N/A", false)
       return this.cardInfo;
     }
-    this.cardInfo = new Card(cardInfo.cardNumber, cardInfo.ccv, cardInfo.name, cardInfo.expiryDate)
+    this.cardInfo = new Card(cardInfo.cardNumber, cardInfo.ccv, cardInfo.name, cardInfo.expiryDate, cardInfo.isActive)
     return this.cardInfo;
   }
 }

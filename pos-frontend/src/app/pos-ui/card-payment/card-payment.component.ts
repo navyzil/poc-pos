@@ -102,5 +102,6 @@ export class CardPaymentComponent implements PosNumbers {
     this.card.ccv = cardInfo.ccv;
     this.card.name = cardInfo.name;
     this.card.expiryDate = cardInfo.expiryDate;
+    this.card.paymentStatus = cardInfo.isActive? "ACCEPTED":"REJECTED";
   }
 }

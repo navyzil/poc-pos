@@ -1,9 +1,9 @@
-export class CardDTO
-{
-  private _cardNumber: string="";
-  private _ccv: string="";
+export class CardDTO {
+  private _cardNumber: string = "";
+  private _ccv: string = "";
   private _name: string = "";
   private _expiryDate: string = "";
+  private _paymentStatus: string = "";
 
 
   get cardNumber(): string {
@@ -36,5 +36,13 @@ export class CardDTO
 
   set expiryDate(value: string) {
     this._expiryDate = value;
+  }
+
+  get paymentStatus(): string {
+    return this._paymentStatus;
+  }
+
+  set paymentStatus(value: string) {
+    this._paymentStatus = value;
   }
 }
