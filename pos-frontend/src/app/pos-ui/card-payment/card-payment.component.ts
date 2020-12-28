@@ -1,11 +1,13 @@
 import {Component, ElementRef, ViewChild} from "@angular/core";
 import {PosNumbers} from "../../shared/PosNumbers";
-import {Card} from "../../models/Card";
+import {CardInfoService} from "../../services/CardInfoService";
+import {CardDTO} from "../../dto/CardDTO";
 
 @Component({
   selector: "card-payment",
   templateUrl: "./card-payment.html",
-  styleUrls: ["./card-payment.scss"]
+  styleUrls: ["./card-payment.scss"],
+  providers:[CardDTO, CardInfoService]
 
 })
 export class CardPaymentComponent implements PosNumbers {
@@ -17,7 +19,7 @@ export class CardPaymentComponent implements PosNumbers {
   cardNumber: string;
   cardCcv: string;
 
-  constructor(public card: Card) {
+  constructor(public card:CardDTO, public cardInfoService:CardInfoService) {
     this.isFocusedOnCardNumberInput = true;
     this.isFocusedOnCcvInput = false;
     this.cardCcv = "";
@@ -95,5 +97,10 @@ export class CardPaymentComponent implements PosNumbers {
 
   confirm() {
     console.log("Confirming Record of Card Number:",this.cardNumber, " with CCV:",this.cardCcv);
+    let cardInfo = this.cardInfoService.getCardInfo(this.cardNumber, this.cardCcv);
+    this.card.cardNumber = cardInfo.cardNumber;
+    this.card.ccv = cardInfo.ccv;
+    this.card.name = cardInfo.name;
+    this.card.expiryDate = cardInfo.expiryDate;
   }
 }

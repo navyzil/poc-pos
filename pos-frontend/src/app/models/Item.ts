@@ -1,17 +1,20 @@
 export class Item {
-  private itemNo: number = 0;
-  private itemName: string = "";
+  private itemNo: string;
+  private itemName: string;
   private itemPrice: number = 0.00;
 
 
-  constructor() {
+  constructor(itemNo:string, itemName:string, itemPrice:number) {
+    this.itemNo = itemNo;
+    this.itemName = itemName;
+    this.itemPrice = itemPrice;
   }
 
-  get getItemNo(): number {
+  get getItemNo(): string {
     return this.itemNo;
   }
 
-  set setItemNo(value: number) {
+  set setItemNo(value: string) {
     this.itemNo = value;
   }
 

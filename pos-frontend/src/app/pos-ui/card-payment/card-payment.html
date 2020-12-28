@@ -11,9 +11,15 @@
     </mat-grid-tile>
     <mat-grid-tile class="card-number-label" colspan="3">
       <mat-label>Name:{{card.name}}</mat-label>
-      <mat-label>Card Number:{{card.number}}</mat-label>
-      <mat-label>Expiry:{{card.expiryDate}}</mat-label>
+    </mat-grid-tile>
+    <mat-grid-tile class="card-number-label" colspan="3">
+      <mat-label>Card Number:{{card.cardNumber}}</mat-label>
+    </mat-grid-tile>
+    <mat-grid-tile class="card-number-label" colspan="3">
       <mat-label>CCV:{{card.ccv}}</mat-label>
+    </mat-grid-tile>
+    <mat-grid-tile class="card-number-label" colspan="3">
+      <mat-label>Expiry Date:{{card.expiryDate}}</mat-label>
     </mat-grid-tile>
     <mat-dialog-actions>
       <mat-grid-tile colspan="3">
