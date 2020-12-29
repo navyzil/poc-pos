@@ -1,19 +1,22 @@
 <h1 mat-dialog-title>Customer Payment</h1>
 <div mat-dialog-content>
   <mat-grid-list cols="3" rowHeight="75px">
-    <mat-grid-tile class="total-payment-label" colspan="3">
-      <mat-label>Total Cost:{{paymentDialogData.totalPrice}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="payment-options" colspan="3">
-      <mat-radio-group [(ngModel)]="paymentType">
-<!--        <mat-radio-button *ngFor="let payment of payments" [value]="payment" (click)="displayPaymentMode(payment)">-->
+    <mat-grid-tile class="payment-options-grid" colspan="1">
+      <mat-radio-group [(ngModel)]="paymentType" class="payment-options-group">
         <mat-radio-button *ngFor="let payment of payments" [value]="payment">
           {{payment}}
         </mat-radio-button>
       </mat-radio-group>
     </mat-grid-tile>
+    <mat-grid-tile class="total-cost-grid" colspan="2">
+      <mat-label class="total-cost-label">Total Cost:{{paymentDialogData.totalPrice.toFixed(2)}}</mat-label>
+    </mat-grid-tile>
   </mat-grid-list>
   <div id="paymentmode-div" #paymentModeDiv *ngIf="paymentType == 'Cash'; then cashBlock else cardBlock"></div>
-  <ng-template #cashBlock><cash-payment></cash-payment></ng-template>
-  <ng-template #cardBlock><card-payment></card-payment></ng-template>
+  <ng-template #cashBlock>
+    <cash-payment></cash-payment>
+  </ng-template>
+  <ng-template #cardBlock>
+    <card-payment></card-payment>
+  </ng-template>
 </div>

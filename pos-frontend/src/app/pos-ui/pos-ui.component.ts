@@ -18,7 +18,7 @@ export class PosUiComponent {//implements OnInit {
   totalPrice: number = 0.00;
   isDisabled: boolean = true;
   isNewTransactionDisabled: boolean=false;
-  isPaymentDisabled: boolean=true;
+  isPaymentDisabled: boolean=false;
   items: Array<Item>=[];
 
   tax: number = 0.03;

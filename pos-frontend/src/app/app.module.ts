@@ -38,7 +38,6 @@ import {Item} from "./models/Item";
     FormsModule,
     MatInputModule
   ],
-  // providers: [Card, Item],
   bootstrap: [
     // AppComponent,
     PosUiComponent

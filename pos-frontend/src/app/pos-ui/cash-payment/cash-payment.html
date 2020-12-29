@@ -1,33 +1,45 @@
-  <mat-grid-list cols="3" rowHeight="75px">
-    <mat-grid-tile class="total-payment-label" colspan="3">
-      <mat-label>Total Payment:{{(+this.payment).toFixed(2)}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="total-payment-label" colspan="3">
-      <mat-label>Change:{{paymentDialogData.change.toFixed(2)}}</mat-label>
-    </mat-grid-tile>
-    <mat-dialog-actions>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="one()">1</button>
-        <button mat-raised-button (click)="two()">2</button>
-        <button mat-raised-button (click)="three()">3</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="four()">4</button>
-        <button mat-raised-button (click)="five()">5</button>
-        <button mat-raised-button (click)="six()">6</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="seven()">7</button>
-        <button mat-raised-button (click)="eight()">8</button>
-        <button mat-raised-button (click)="nine()">9</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="zero()">0</button>
-        <button mat-raised-button (click)="decimal()">.</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="computeChange()">Compute</button>
-        <button mat-raised-button (click)="clear()">Clear</button>
-      </mat-grid-tile>
-    </mat-dialog-actions>
-  </mat-grid-list>
+<mat-grid-list cols="3" rowHeight="100px">
+  <mat-grid-tile class="cash-button-tile" colspan="2" rowspan="5">
+    <div class="cash-button-div">
+      <mat-grid-list class="cash-button-grid" cols="3" rowHeight="100px">
+        <mat-dialog-actions>
+          <mat-grid-tile colspan="3" class="cash-button-grid-1">
+            <button class="cash-button" id="cash-button-1" mat-raised-button (click)="one()">1</button>
+            <button class="cash-button" id="cash-button-2" mat-raised-button (click)="two()">2</button>
+            <button class="cash-button" id="cash-button-3" mat-raised-button (click)="three()">3</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="cash-button-grid-2">
+            <button class="cash-button" id="cash-button-4" mat-raised-button (click)="four()">4</button>
+            <button class="cash-button" id="cash-button-5" mat-raised-button (click)="five()">5</button>
+            <button class="cash-button" id="cash-button-6" mat-raised-button (click)="six()">6</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="cash-button-grid-3">
+            <button class="cash-button" id="cash-button-7" mat-raised-button (click)="seven()">7</button>
+            <button class="cash-button" id="cash-button-8" mat-raised-button (click)="eight()">8</button>
+            <button class="cash-button" id="cash-button-9" mat-raised-button (click)="nine()">9</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="cash-button-grid-4">
+            <button class="cash-button" id="cash-button-0" mat-raised-button (click)="zero()">0</button>
+            <button class="cash-button" id="cash-button-decimal" mat-raised-button (click)="decimal()">.</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="cash-button-grid-5">
+            <button class="compute-button" mat-raised-button (click)="computeChange()">Compute</button>
+            <button class="clear-button" mat-raised-button (click)="clear()">Clear</button>
+          </mat-grid-tile>
+        </mat-dialog-actions>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="payment-change-tile" colspan="1">
+    <div class="payment-change-div">
+      <mat-grid-list cols="2">
+        <mat-grid-tile class="total-payment-grid" colspan="2">
+          <mat-label class="total-payment-label">Payment:{{(+this.payment).toFixed(2)}}</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="change-grid" colspan="2">
+          <mat-label class="change-label">Change:{{paymentDialogData.change.toFixed(2)}}</mat-label>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

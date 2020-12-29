@@ -1,7 +1,5 @@
 import {Card} from "../models/Card";
-import {Injectable} from "@angular/core";
 
-@Injectable()
 export class CardInfoService {
   private cardInfo: Card | undefined;
   private listOfCardInfo: Card[];

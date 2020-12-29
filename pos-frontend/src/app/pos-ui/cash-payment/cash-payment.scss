@@ -1,0 +1,81 @@
+.total-payment-grid {
+  //background-color: #b42aff;
+  text-align: right;
+  color: white;
+}
+
+.change-grid {
+  //background-color: #30e906;
+  text-align: right;
+  color: white;
+}
+
+.payment-change-div {
+  min-width: 100%;
+}
+
+.payment-change-tile {
+  //background-color: #125699;
+  height: 150px !important;
+}
+
+.total-payment-label, .change-label {
+  width: 100%;
+  font-size: 20px;
+  display: block;
+}
+
+//.cash-button-tile {
+//  background-color: crimson;
+  //top: 10px !important;
+//}
+
+.cash-button-div {
+  min-width: 100%;
+  //height: 50px !important;
+}
+.cash-button-grid {
+  //background-color: #06e9c7;
+  top: -1px !important;
+  width: 75% !important;
+
+}
+.cash-button, .compute-button, .clear-button {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  background-color: bisque;
+  //color: #125699;
+  text-align: center;
+  //margin: 5px;
+  left: -10px;
+  top: -10px;
+}
+
+.compute-button, .clear-button{
+  width: 85px;
+  top: -10px;
+  text-align: justify-all;
+}
+.cash-button-grid-1{
+  top: -2px !important;
+}
+
+.cash-button-grid-2{
+  top: 75px !important;
+}
+
+.cash-button-grid-3{
+  top: 152px !important;
+}
+
+.cash-button-grid-4{
+  top: 230px !important;
+}
+
+.cash-button-grid-5{
+  top: 310px !important;
+}
+
+
+
