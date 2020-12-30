@@ -1,0 +1,113 @@
+.card-button-tile {
+  //background-color: crimson;
+  //top: 10px !important;
+}
+
+.card-button-div {
+  min-width: 100%;
+  //background-color: #2ad8ff;
+  //height: 50px !important;
+}
+
+.card-button-grid {
+  //background-color: #06e9c7;
+  top: -50px !important;
+  width: 100% !important;
+  //left: 25px;
+}
+
+.card-button, .confirm-button {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  background-color: #fcffec;
+  //color: #125699;
+  text-align: center;
+  //margin: 5px;
+  left: -10px;
+  top: -10px;
+}
+
+.confirm-button {
+  width: 110px;
+  top: -10px;
+  text-align: justify-all;
+}
+
+.card-button-grid-1 {
+  top: -2px !important;
+}
+
+.card-button-grid-2 {
+  top: 75px !important;
+}
+
+.card-button-grid-3 {
+  top: 152px !important;
+}
+
+.card-button-grid-4 {
+  top: 230px !important;
+}
+
+#card-button-0 {
+  width: 110px;
+}
+
+.card-details-tile {
+  //background-color: #01dbd7;
+  width: 300px !important;
+  //height: 150px !important;
+}
+
+.card-details-div {
+  min-width: 100%;
+  color: white
+}
+
+.card-number-grid {
+  //background-color: #fff835;
+  top: -110px !important;
+  left: -30px !important;
+  color: white
+}
+
+.card-ccv-grid {
+  //background-color: #ff64fd;
+  top: -120px !important;
+  min-width: 100% !important;
+  left: -30px !important;
+  color: white;
+}
+
+.card-details {
+  top: -120px;
+  //background-color: #e57e08;
+  height: 20% !important;
+  left: -25px !important;
+
+}
+.card-info-div{
+  border: 2px solid #cccccc;
+  box-sizing: content-box;
+}
+//
+
+.info-text {
+  background-color: transparent;
+  border: none;
+}
+
+.card-number-input, .card-ccv-input {
+  font-size: 15px !important;
+}
+
+.card-clear-button{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+}
+
+.info-text{
+  color: white;
+}

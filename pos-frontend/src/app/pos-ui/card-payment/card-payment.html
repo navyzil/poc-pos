@@ -1,48 +1,87 @@
-  <mat-grid-list cols="3" rowHeight="75px">
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Card Number:</mat-label>
-      <input matInput type="text" #cardNumberInput (focus)="focusOnCardNumber()" value="{{cardNumber}}" [maxLength]="19">
-      <button mat-raised-button (click)="clearField('CardNumber')">Clear</button>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>CCV:</mat-label>
-      <input matInput type="text" #ccvInput (focus)="focusOnCCV()" value="{{cardCcv}}" [maxLength]="3">
-      <button mat-raised-button (click)="clearField('CCV')">Clear</button>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Name:{{card.name}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Card Number:{{card.cardNumber}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>CCV:{{card.ccv}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Expiry Date:{{card.expiryDate}}</mat-label>
-    </mat-grid-tile>
-    <mat-grid-tile class="card-number-label" colspan="3">
-      <mat-label>Payment Status:{{card.paymentStatus}}</mat-label>
-    </mat-grid-tile>
-    <mat-dialog-actions>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="one()">1</button>
-        <button mat-raised-button (click)="two()">2</button>
-        <button mat-raised-button (click)="three()">3</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="four()">4</button>
-        <button mat-raised-button (click)="five()">5</button>
-        <button mat-raised-button (click)="six()">6</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="seven()">7</button>
-        <button mat-raised-button (click)="eight()">8</button>
-        <button mat-raised-button (click)="nine()">9</button>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <button mat-raised-button (click)="zero()">0</button>
-        <button mat-raised-button (click)="confirm()">Confirm</button>
-      </mat-grid-tile>
-    </mat-dialog-actions>
-  </mat-grid-list>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile class="card-button-tile" colspan="2" rowspan="5">
+    <div class="card-button-div">
+      <mat-grid-list class="card-button-grid" cols="3" rowHeight="100px">
+        <mat-dialog-actions>
+          <mat-grid-tile colspan="3" class="card-button-grid-1">
+            <button class="card-button" mat-raised-button (click)="seven()">7</button>
+            <button class="card-button" mat-raised-button (click)="eight()">8</button>
+            <button class="card-button" mat-raised-button (click)="nine()">9</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="card-button-grid-2">
+            <button class="card-button" mat-raised-button (click)="four()">4</button>
+            <button class="card-button" mat-raised-button (click)="five()">5</button>
+            <button class="card-button" mat-raised-button (click)="six()">6</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="card-button-grid-3">
+            <button class="card-button" mat-raised-button (click)="one()">1</button>
+            <button class="card-button" mat-raised-button (click)="two()">2</button>
+            <button class="card-button" mat-raised-button (click)="three()">3</button>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" class="card-button-grid-4">
+            <button class="card-button" id="card-button-0" mat-raised-button (click)="zero()">0</button>
+            <button class="confirm-button" mat-raised-button (click)="confirm()">Confirm</button>
+          </mat-grid-tile>
+        </mat-dialog-actions>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="card-details-tile" colspan="2" rowspan="5">
+    <div class="card-details-div">
+      <mat-grid-list cols="3">
+        <mat-grid-tile class="card-number-grid" colspan="3">
+          <div>
+            <mat-label class="card-number-label">Card Number:</mat-label>
+            <br>
+            <input class="card-number-input" matInput type="text" #cardNumberInput (focus)="focusOnCardNumber()"
+                   value="{{cardNumber}}"
+                   [maxLength]="19">
+          </div>
+          <button class="card-clear-button" id="number-clear-button"mat-raised-button (click)="clearField('CardNumber')">Clear</button>
+        </mat-grid-tile>
+        <mat-grid-tile class="card-ccv-grid" colspan="3">
+          <div>
+            <mat-label class="card-ccv-label">CCV:</mat-label>
+            <br>
+            <input class="card-ccv-input" id="card-ccv-input-id" matInput type="text" #ccvInput (focus)="focusOnCCV()" value="{{cardCcv}}"
+                   [maxLength]="3">
+          </div>
+          <button class="card-clear-button" id="ccv-clear-button" mat-raised-button (click)="clearField('CCV')">Clear</button>
+        </mat-grid-tile>
+        <mat-grid-tile class="card-details" colspan="3">
+          <div class="card-info-div">
+            <mat-label class="card-name-label">Name:</mat-label>
+            <input class="info-text" value="{{card.name}}">
+            <br>
+            <mat-label class="card-number-label">Card Number:</mat-label>
+            <input class="info-text" value="{{card.cardNumber}}">
+            <br>
+            <mat-label class="card-ccv-label">CCV:</mat-label>
+            <input class="info-text" value="{{card.ccv}}">
+            <br>
+            <mat-label class="card-expiry-label">Expiry Date:</mat-label>
+            <input class="info-text" value="{{card.expiryDate}}">
+            <br>
+            <mat-label class="payment-status-label">Payment Status:</mat-label>
+            <input class="info-text" value="{{card.paymentStatus}}">
+          </div>
+        </mat-grid-tile>
+        <!--        <mat-grid-tile class="card-name-label-grid" colspan="3">-->
+        <!--          <mat-label class="card-name-label">Name:{{card.name}}</mat-label>-->
+        <!--        </mat-grid-tile>-->
+        <!--        <mat-grid-tile class="card-number-label-grid" colspan="3">-->
+        <!--          <mat-label class="card-number-label">Card Number:{{card.cardNumber}}</mat-label>-->
+        <!--        </mat-grid-tile>-->
+        <!--        <mat-grid-tile class="card-ccv-label-grid" colspan="3">-->
+        <!--          <mat-label class="card-ccv-label">CCV:{{card.ccv}}</mat-label>-->
+        <!--        </mat-grid-tile>-->
+        <!--        <mat-grid-tile class="card-expiry-label-grid" colspan="3">-->
+        <!--          <mat-label class="card-expiry-label">Expiry Date:{{card.expiryDate}}</mat-label>-->
+        <!--        </mat-grid-tile>-->
+        <!--        <mat-grid-tile class="payment-status-label-grid" colspan="3">-->
+        <!--          <mat-label class="payment-status-label">Payment Status:{{card.paymentStatus}}</mat-label>-->
+        <!--        </mat-grid-tile>-->
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
